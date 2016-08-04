@@ -1,7 +1,8 @@
 import scraperwiki
 from BeautifulSoup import BeautifulSoup
 
-RANGE = 1000000
+#RANGE = 1000000
+RANGE=1
 
 def strip_tags(s):
     start = s.find("<")
@@ -11,7 +12,8 @@ def strip_tags(s):
     return s[:start]+strip_tags(s[end:])
 
 for i in xrange(RANGE):
-    url = "http://www.ukrlp.co.uk/ukrlp/ukrlp_provider.page_pls_provDetails?x=&pn_p_id=1%07d&pv_status=VERIFIED&pv_vis_code=L" % (i)
+    i = 10050000
+    url = "https://www.ukrlp.co.uk/ukrlp/ukrlp_provider.page_pls_provDetails?x=&pn_p_id=1%07d&pv_status=VERIFIED&pv_vis_code=L" % (i)
     html = scraperwiki.scrape(url)
     bs = BeautifulSoup(html)
     data = {}
